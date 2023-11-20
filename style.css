@@ -24,7 +24,11 @@ h1,h2,h3,p{
 }
 
 article{
-    padding: 2rem 2rem 1rem;
+    padding: 2rem 0 0;
+}
+
+article>*{
+    padding: 0rem 2rem;
 }
 
 h1{
@@ -69,7 +73,9 @@ p{
 
 aside{
     text-align-last: justify;
-    margin: 2rem 0 0;
+    margin: 1rem 0 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 aside>*{
@@ -84,6 +90,7 @@ aside>*{
     text-align-last: center;
     vertical-align: middle;
     cursor: pointer;
+    position: relative;
 }
 
 .share-button>*{
@@ -96,6 +103,25 @@ aside>div *{
 
 .drawers-pic{
     width:100%;
+}
+
+.socials{
+    color: hsl(212,23%,69%);
+    display: none;
+}
+
+.socials > *+*{
+    margin-left:1rem;
+}
+
+.socials span{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+
+.socials.add{
+    display: inline-block;
 }
 
 @media screen and (min-width: 819px) {
@@ -118,9 +144,48 @@ aside>div *{
 
     article{
         width: 59%;
+        padding: 2rem 2rem 1rem;
     }
 
     h1{
         font-size: 1.35rem;
     }
+
+    article>*{
+        padding:0;
+    }
+
+    .socials{
+        position: absolute;
+        padding: 1rem 2rem 1rem;
+        background: hsl(217, 19%, 35%);
+        top:-85px;
+        left:50%;
+        width:max-content;
+        border-radius: .5rem;
+        transform: translateX(-50%);
+    }
+    
+    .socials::before{
+        content: "";
+        /*background: hsl(217, 19%, 35%);*/
+        position:absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        border-right: 10px solid white;
+        border-left: 10px solid white;
+        border-top: 10px solid hsl(217, 19%, 35%);
+    }
+}
+
+@media screen and (max-width: 819px) {
+    .infos.remove{
+        display: none;
+    }
+
+    aside.active-socials{
+        background: hsl(217, 19%, 35%);
+    }
+    
 }
