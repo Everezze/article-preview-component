@@ -125,6 +125,10 @@ aside>div *{
 }
 
 @media screen and (min-width: 819px) {
+    main{
+        overflow: visible;
+    }
+
     .dib{
         display: inline-block;
     }
@@ -135,6 +139,8 @@ aside>div *{
 
     .drawers-pic{
         width: 122%;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
     }
 
     .drawer-container{
@@ -160,18 +166,19 @@ aside>div *{
         padding: 1rem 2rem 1rem;
         background: hsl(217, 19%, 35%);
         top:-85px;
-        left:50%;
+        right:0;
         width:max-content;
         border-radius: .5rem;
-        transform: translateX(-50%);
+        /*transform: translateX(-50%);*/
     }
     
     .socials::before{
         content: "";
         /*background: hsl(217, 19%, 35%);*/
         position:absolute;
-        left: 50%;
+        /*left: 50%;*/
         top: 100%;
+        left:93%;
         transform: translateX(-50%);
         border-right: 10px solid white;
         border-left: 10px solid white;
@@ -188,4 +195,16 @@ aside>div *{
         background: hsl(217, 19%, 35%);
     }
     
+}
+
+@media screen and (min-width: 930px) {
+   .socials{
+       right:auto;
+       left:50%;
+       transform: translateX(-50%);
+   }
+
+   .socials::before{
+       left:50%;
+   }
 }
