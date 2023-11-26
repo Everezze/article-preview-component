@@ -124,6 +124,14 @@ aside>div *{
     display: inline-block;
 }
 
+.share-button path.active{
+    fill:white;
+}
+
+.share-button.bg{
+    background: hsl(214,17%,51%);
+}
+
 @media screen and (min-width: 819px) {
     main{
         overflow: visible;
@@ -170,6 +178,7 @@ aside>div *{
         width:max-content;
         border-radius: .5rem;
         /*transform: translateX(-50%);*/
+        box-shadow: 0px 5px 10px hsl(212, 23%, 69%);
     }
     
     .socials::before{
@@ -180,8 +189,8 @@ aside>div *{
         top: 100%;
         left:93%;
         transform: translateX(-50%);
-        border-right: 10px solid white;
-        border-left: 10px solid white;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
         border-top: 10px solid hsl(217, 19%, 35%);
     }
 }
@@ -194,6 +203,7 @@ aside>div *{
     aside.active-socials{
         background: hsl(217, 19%, 35%);
     }
+
     
 }
 
